@@ -17,3 +17,11 @@
 
 /* Shared responsive footer navigation */
 .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 24px}.footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:4px 16px}.footer-links a{color:#c7d8ca;text-decoration:none;display:inline-flex;align-items:center;min-height:40px;font-size:.82rem}.footer-links a:hover{text-decoration:underline;color:#fff}.footer-links a:focus-visible{outline:2px solid var(--sage);outline-offset:3px;border-radius:3px}@media(max-width:650px){.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:2px 14px}.footer-links a{min-height:44px}}
+
+
+/* Editorial refinement shared with the original FUNtasia Audio site */
+:root{--bg:#101a19;--panel:#1d2c29;--sage:#8fae9f;--text:#e8e1ce}
+body{background:var(--bg);color:var(--text)}.top{background:#101a19;border-bottom-color:rgba(232,225,206,.16)}.top .brand{font-weight:500;letter-spacing:.06em}.site-nav a{font-family:Arial,sans-serif;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}.hero{padding-top:76px}.eyebrow{font-family:Arial,sans-serif;font-weight:500;letter-spacing:.2em}h1,h2{font-weight:400}h1{letter-spacing:-.025em}.lead{color:#b9c0b6}
+.card{background:#172321;border-radius:3px;border-color:rgba(232,225,206,.16)}.card:hover{background:#1d2c29;border-color:rgba(143,174,159,.6)}.card h2{font-weight:400}.card p{color:#b9c0b6}.status{border-radius:2px;font-family:Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#b9cabe;border-color:rgba(143,174,159,.35)}.notice{background:#172321;border:1px solid rgba(232,225,206,.16);border-radius:3px}.footer{border-top-color:rgba(232,225,206,.16)}.footer-links a{font-family:Arial,sans-serif;letter-spacing:.05em}
+.records-hero{border-radius:3px!important}.links a{border-radius:2px!important}
+@media(max-width:650px){.hero{padding-top:52px}}
