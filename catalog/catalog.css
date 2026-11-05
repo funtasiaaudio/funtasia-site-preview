@@ -4,3 +4,9 @@
 
 /* Cross-division navigation, kept distinct from locale selector */
 .catalog-site-nav{width:100%;display:flex;flex-wrap:wrap;gap:4px 13px;border-top:1px solid var(--line);padding-top:12px;margin-top:4px}.catalog-site-nav a{display:inline-flex;align-items:center;min-height:40px;padding:4px 2px;border:0;border-bottom:2px solid transparent;border-radius:0;color:var(--muted);font-size:.85rem}.catalog-site-nav a:hover,.catalog-site-nav a:focus-visible{color:var(--ivory);border-bottom-color:var(--light)}.catalog-site-nav a[aria-current="page"]{background:transparent;color:var(--ivory);border-bottom-color:var(--light)}@media(max-width:650px){.catalog-site-nav a{min-height:44px}.bar{gap:12px}}
+
+
+/* Editorial refinement to match FUNtasia Audio's existing identity */
+:root{--bg:#101a19;--panel:#172321;--sage:#78958a;--light:#8fae9f;--ivory:#e8e1ce;--muted:#a9b3a9;--line:rgba(232,225,206,.16)}
+header{background:#101a19}.brand{font-weight:500;letter-spacing:.06em}header nav a{border-radius:2px;font-family:Arial,sans-serif;letter-spacing:.06em}main{padding-top:76px}.eyebrow{font-family:Arial,sans-serif;font-weight:500}h1{font-weight:400;letter-spacing:-.025em}
+.card{border-radius:3px;background:var(--panel)}.card h2{font-weight:400}.search{background:#172321;border-color:rgba(143,174,159,.55);border-radius:2px}.mini-btn,.filter-btn{border-radius:2px;font-family:Arial,sans-serif;letter-spacing:.035em}.filter-btn[aria-pressed=true]{background:#8fae9f}.shot{background:#101a19;filter:saturate(.78)}.catalog-site-nav a{font-family:Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
