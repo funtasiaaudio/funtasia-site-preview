@@ -14,3 +14,6 @@
 
 /* Shared card and link treatment across divisions */
 .card{transition:border-color .16s ease,background-color .16s ease}.card:hover{border-color:#a8c5ae77;background:#293e32}.card a{display:inline-block;margin-top:12px;text-underline-offset:4px;font-weight:700}.card a:hover,.card a:focus-visible{color:#fff}.card a:focus-visible,.brand:focus-visible,.back:focus-visible{outline:2px solid var(--sage);outline-offset:4px;border-radius:3px}.card p+p{margin-top:10px}.grid>.card{min-width:0}.lead{line-height:1.9}@media(max-width:650px){.card{padding:21px;min-height:0}.grid{gap:14px;margin:24px 0 42px}}@media(prefers-reduced-motion:reduce){.card{transition:none}}
+
+/* Shared responsive footer navigation */
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 24px}.footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:4px 16px}.footer-links a{color:#c7d8ca;text-decoration:none;display:inline-flex;align-items:center;min-height:40px;font-size:.82rem}.footer-links a:hover{text-decoration:underline;color:#fff}.footer-links a:focus-visible{outline:2px solid var(--sage);outline-offset:3px;border-radius:3px}@media(max-width:650px){.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:2px 14px}.footer-links a{min-height:44px}}
