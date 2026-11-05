@@ -10,3 +10,12 @@
 .record-disc{width:132px;height:132px;border-radius:50%;background:repeating-radial-gradient(circle,#12211a 0 3px,#314b3c 4px 5px,#12211a 6px 8px);box-shadow:0 12px 32px #0007;display:grid;place-items:center}
 .record-disc:after{content:"";display:block;width:45px;height:45px;border-radius:50%;background:radial-gradient(circle,#14241e 0 4px,#a8c5ae 5px 22px,#2a4336 23px)}
 @media(max-width:680px){.card-media{height:150px}}
+
+
+/* Editorial refinement: align preview with the established Audio visual language */
+:root{--bg:#101a19;--panel:#1d2c29;--panel2:#172321;--sage:#78958a;--light:#8fae9f;--ivory:#e8e1ce;--muted:#a9b3a9;--line:rgba(232,225,206,.16)}
+.header{background:rgba(16,26,25,.96)}.header-inner{min-height:72px}.logo{font-weight:500;letter-spacing:.06em}.nav{font-family:Arial,sans-serif;font-size:.75rem;letter-spacing:.11em;text-transform:uppercase}
+.hero{background:linear-gradient(120deg,#101a19 42%,#172321 100%);padding:112px 0 104px}.eyebrow{font-family:Arial,sans-serif;font-size:.7rem;letter-spacing:.2em;font-weight:500}h1{font-weight:400;letter-spacing:-.025em}h2{font-weight:400}.lead{color:#b9c0b6}.section{padding:76px 0;border-top:1px solid var(--line)}
+.card{background:#172321;border-radius:3px;border-color:var(--line);transition:border-color .16s ease;box-shadow:none}.card:hover{border-color:rgba(143,174,159,.6);transform:none}.card h3{font-weight:400}.card .tag,.card .more{font-family:Arial,sans-serif;letter-spacing:.1em}.btn{border-radius:2px;font-family:Arial,sans-serif;font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;font-weight:500}.btn.primary{background:#8fae9f;border-color:#8fae9f}.note{background:#172321;border-left-width:2px}
+.card-media{border-radius:2px 2px 0 0;background:#101a19}.card-media img{filter:saturate(.72)}.card-media-abstract{background:linear-gradient(145deg,#23352f,#101a19)}.card-media-records{background:linear-gradient(145deg,#24382e,#101a19)}.abstract-symbol{text-shadow:none;opacity:.68}.record-disc{box-shadow:0 10px 20px #0005}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
