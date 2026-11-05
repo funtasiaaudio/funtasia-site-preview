@@ -1,0 +1,45 @@
+name: Import verified Records images
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/records-assets.yml
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and verify original image bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p records/assets
+          base="https://raw.githubusercontent.com/infofuntasiarecords-tech/funtasia-records/main"
+          while read -r filename expected; do
+            curl --fail --location --retry 3 --silent --show-error "$base/$filename" -o "records/assets/$filename"
+            actual="$(git hash-object "records/assets/$filename")"
+            if [ "$actual" != "$expected" ]; then
+              echo "::error::Git blob hash mismatch: $filename"
+              exit 1
+            fi
+          done <<'FILES'
+          FUNtasia_Records_header_web_2560.webp 074f078282c0d6cda554640039e88642c63a5c65
+          hueliang.png c32f8f52d95d6b597affbd20f9d54593246e0cf0
+          rotto.png a53b132188a76a1b65e8a3891a17112ab71baf77
+          haruka.png 0f1ca579d6cead5c1be2e18f287f2677a5b5efaf
+          FILES
+      - name: Commit imported images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add records/assets/
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: import verified Records originals"
+            git push
+          fi
