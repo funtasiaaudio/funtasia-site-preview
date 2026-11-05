@@ -11,3 +11,6 @@
 /* Refined header hierarchy */
 .top{background:linear-gradient(180deg,#1c2b23 0%,#17231f 100%)}.top .wrap{column-gap:24px}.top .brand{color:var(--text);letter-spacing:.035em;line-height:1.35}.top .brand:hover{color:var(--sage)}.top .back{color:#c1d3c5;font-size:.85rem;transition:color .15s ease}.top .back:hover{color:#fff}.site-nav{margin-left:auto}.site-nav a{transition:color .15s ease,border-color .15s ease}@media(max-width:700px){.site-nav{margin-left:0;border-top:1px solid #a8c5ae22;padding-top:8px}.top .wrap{gap:8px}}
 @media(prefers-reduced-motion:reduce){.top .back,.site-nav a{transition:none}}
+
+/* Shared card and link treatment across divisions */
+.card{transition:border-color .16s ease,background-color .16s ease}.card:hover{border-color:#a8c5ae77;background:#293e32}.card a{display:inline-block;margin-top:12px;text-underline-offset:4px;font-weight:700}.card a:hover,.card a:focus-visible{color:#fff}.card a:focus-visible,.brand:focus-visible,.back:focus-visible{outline:2px solid var(--sage);outline-offset:4px;border-radius:3px}.card p+p{margin-top:10px}.grid>.card{min-width:0}.lead{line-height:1.9}@media(max-width:650px){.card{padding:21px;min-height:0}.grid{gap:14px;margin:24px 0 42px}}@media(prefers-reduced-motion:reduce){.card{transition:none}}
