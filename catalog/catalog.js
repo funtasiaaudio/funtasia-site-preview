@@ -2,12 +2,13 @@ const search=document.querySelector('#product-search');const cards=[...document.
 
 /* Accessible native dialog with original Audio product descriptions. */
 const details=window.FUN_PRODUCT_DETAILS||{};
+const localized=window.FUN_PRODUCT_LOCALIZED||{};
 const locale=document.documentElement.lang||'en';
 const words={ja:['詳しく見る','製品紹介','元サイトで見る','閉じる','元サイト掲載の英語説明'],en:['Details','Product details','Original page','Close','Original English description'],de:['Details','Produktdetails','Originalseite','Schließen','Englische Originalbeschreibung'],fr:['Détails','Présentation','Page originale','Fermer','Description originale en anglais'],ru:['Подробнее','О продукте','Оригинальная страница','Закрыть','Оригинальное описание на английском']}[locale]||['Details','Product details','Original page','Close','Original English description'];
 const dialog=document.createElement('dialog');dialog.className='product-dialog';dialog.setAttribute('aria-labelledby','product-dialog-title');
 dialog.innerHTML='<div class="dialog-top"><span class="dialog-kicker"></span><button class="dialog-close" type="button"></button></div><h2 id="product-dialog-title"></h2><div class="dialog-body"></div><div class="dialog-footer"><a class="dialog-original" target="_blank" rel="noopener noreferrer"></a></div>';
 document.body.append(dialog);
-dialog.querySelector('.dialog-kicker').textContent=words[4];
+dialog.querySelector('.dialog-kicker').textContent=words[1];
 dialog.querySelector('.dialog-close').textContent=words[3];
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
@@ -21,8 +22,10 @@ for(const card of cards){
  btn.addEventListener('click',()=>{
   dialog.querySelector('#product-dialog-title').textContent=card.dataset.productName;
   const body=dialog.querySelector('.dialog-body');body.replaceChildren();
-  if(item.lead){const lead=document.createElement('p');lead.className='dialog-lead';lead.textContent=item.lead;body.append(lead);}
-  for(const line of item.paras){const p=document.createElement('p');p.textContent=line;body.append(p);}
+  if(item.lead && !localized[locale]?.[key]){const lead=document.createElement('p');lead.className='dialog-lead';lead.textContent=item.lead;body.append(lead);}
+  const translation=localized[locale]?.[key];
+  if(translation){const p=document.createElement('p');p.textContent=translation;body.append(p);const disclosure=document.createElement('details');disclosure.className='dialog-english';const summary=document.createElement('summary');summary.textContent=words[4];disclosure.append(summary);for(const line of item.paras){const original=document.createElement('p');original.textContent=line;disclosure.append(original);}body.append(disclosure);}
+  else for(const line of item.paras){const p=document.createElement('p');p.textContent=line;body.append(p);}
   if(item.features.length){const list=document.createElement('ul');list.className='dialog-features';for(const feature of item.features){const li=document.createElement('li');li.textContent=feature;list.append(li);}body.append(list);}
   const link=dialog.querySelector('.dialog-original');link.href=href;link.textContent=words[2]+' →';
   dialog.showModal();
